@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-transform: uppercase;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+
+.container {
+    width: 1200px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: #000;
+    height: 110px;
+}
+
+.logo {
+    cursor: pointer;
+    color: white;
+}
+
+span {
+    width: 30px;
+    height: 3px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    display: block;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+}
+
+li {
+    margin-right: 30px;
+    padding: 25px 10px;
+    width: 100%;
+}
+
+li:hover {
+    background-color: #666;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+input,
+label {
+    display: none;
+}
+
+@media screen and (max-width: 800px) {
+    .container {
+        width: 95%;
+    }
+    
+    header {
+        background-color: #000;
+    }
+    
+    .logo img {
+        position: relative;
+        left: 0;
+    }
+    
+    span {
+        width: 35px;
+        height: 3px;
+        margin-bottom: 10px;
+        background-color: #fff;
+        transform-origin: left;
+        display: block;
+        transition: .3s;
+        opacity: 1;
+        position: relative;
+    }
+    
+    ul {
+        display: flex;
+        list-style: none;
+        flex-direction: column;
+        position: fixed;
+        top: 110px;
+        left: -100%;
+        background-color: #888;
+        width: 80%;
+        transition: 1s;
+    }
+    
+    li {
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    li a {
+        color: white;
+        text-decoration: none;
+        width: 100%;
+    }
+    
+    label {
+        display: block;
+        position: absolute;
+        right: 5%;
+    }
+    
+    input:checked ~ label span:first-child{
+        transform: rotate(45deg);
+        width: 36px;
+    }
+    
+    input:checked ~ label span:nth-child(2){
+        opacity: 0;
+    }
+    
+    input:checked ~ label span:last-child{
+        transform: rotate(-45deg);
+        width: 36px;
+    }
+    
+    input:checked ~ nav ul {
+        left: 0;
+    }
+}
